@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aqua;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+        .progress{
+            height: 160px;
+            width: 160px;
+            
+        }
+        .outter_circle {
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.inner_circle {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+        inset -6px -6px 10px 0 rgba(0, 0, 0, 0.2);
+   
+}
+
+circle{
+    fill: none;
+    stroke: url(#GradientColor);
+    stroke-width:20px;
+    stroke-dasharray:472;
+    stroke-dashoffset:472;
+    animation: anim 2s linear forwards;
+    
+}
+@keyframes anim {
+  
+    100%{
+        
+        stroke-dashoffset: 0;
+    }
+}
+
+svg{
+   position: absolute;
+   top: 0px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="progress">
+        <div class="outter_circle">
+            <div class="inner_circle">
+                <div></div>
+            </div>
+        </div>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200px" height="200px">
+            <defs>
+              <radialGradient id="shadowGradient">
+                <stop offset="70%" stop-color="blue" />
+                <stop offset="100%" stop-color="r)" />
+              </radialGradient>
+            </defs>
+            
+            <!-- Outer circle -->
+            <circle cx="100" cy="100" r="70" fill="red" />
+            <circle cx="100" cy="100" r="70" fill="url(#shadowGradient)" />
+            
+            <!-- Inner circle -->
+            <circle cx="100" cy="100" r="60" fill="#fff" />
+            <circle cx="100" cy="100" r="60" fill="url(#shadowGradient)" />
+          </svg>
+    </div>
+
+</body>
+</html>
